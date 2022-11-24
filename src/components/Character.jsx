@@ -1,23 +1,28 @@
+import { useFetch } from "../hooks/useFetch";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
+import Spinner from "react-bootstrap/Spinner";
 
-const Character = ({ characters }) => {
+const Character = ({ character }) => {
+  const { data, loading } = useFetch(character);
   return (
     <>
-      {characters.map((el) => (
-        <Col key={el.id} xs={3} className="mt-4">
+      {loading ? (
+        ""
+      ) : (
+        <Col key={data.id} xs={6} md={3} className="mt-4">
           <Card>
-            <Card.Img variant="top" src={el.avatar} />
+            <Card.Img variant="top" src={data.image} />
             <Card.Body>
-              <Card.Title>{el.name}</Card.Title>
+              <Card.Title>{data.name}</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">
-                {el.status}
+                {data.status}
               </Card.Subtitle>
-              <Card.Text>Planeta de Origen: {el.origin}</Card.Text>
+              <Card.Text>Planeta de Origen: {data.origin.name}</Card.Text>
             </Card.Body>
           </Card>
         </Col>
-      ))}
+      )}
     </>
   );
 };
