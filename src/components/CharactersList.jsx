@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useFetch } from "../hooks/useFetch";
+import { useSessionStorage } from "../hooks/useSessionStorage";
 import Character from "./Character";
 import Container from "react-bootstrap/Container";
 import Spinner from "react-bootstrap/Spinner";
@@ -7,8 +8,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 const CharactersList = () => {
-  const [id, setId] = useState(1);
-  const [charactersEpisode, setCharactersEpisode] = useState([]);
+  const [id, setId] = useSessionStorage("id", 1);
   const { data, loading } = useFetch(
     `https://rickandmortyapi.com/api/episode/${id}`
   );
@@ -58,9 +58,9 @@ const CharactersList = () => {
           </Row>
           <Row>
             <h2>Personajes</h2>
-            {data.characters.map((element, i) => {
-              return <Character key={i} character={element} />;
-            })}
+            {data.characters.map(character => 
+              <Character key={character} character={character} />
+            )}
           </Row>
         </>
       )}

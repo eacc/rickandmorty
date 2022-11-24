@@ -1,7 +1,6 @@
 import { useFetch } from "../hooks/useFetch";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
-import Spinner from "react-bootstrap/Spinner";
 
 const Character = ({ character }) => {
   const { data, loading } = useFetch(character);
@@ -10,7 +9,7 @@ const Character = ({ character }) => {
       {loading ? (
         ""
       ) : (
-        <Col key={data.id} xs={6} md={3} className="mt-4">
+        <Col xs={6} md={3} className="mt-4">
           <Card>
             <Card.Img variant="top" src={data.image} />
             <Card.Body>
