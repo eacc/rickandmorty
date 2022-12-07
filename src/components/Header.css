@@ -1,0 +1,69 @@
+.header-container {
+  text-align: center;
+  padding: 1rem;
+}
+
+.header-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.header-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.episode-title h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0.5rem;
+}
+
+.episode-title h3 {
+  font-size: 1.5rem;
+}
+
+.button {
+  font-family: "Nunito", sans-serif;
+  font-size: 18px;
+  margin: 0 2rem;
+  background-color: var(--color-primary);
+  padding: 6px 35px;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .header-body {
+    flex-direction: column;
+  }
+
+  .button {
+    font-size: 20px;
+    padding: 6px 56px;
+    justify-content: center;
+    display: block;
+    margin: 5px auto;
+    font-weight: 400;
+  }
+
+  .header-title {
+    font-size: 2rem;
+    margin: 1rem;
+  }
+
+  .episode-title h2 {
+    font-size: 1.5rem;
+    margin: 0.5rem;
+  }
+
+  .episode-title h3 {
+    font-size: 1.2rem;
+    margin: 0.5rem;
+  }
+}

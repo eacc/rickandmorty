@@ -1,13 +1,21 @@
-import "./App.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React from "react";
+import Header from "./components/Header";
 import CharactersList from "./components/CharactersList";
+import ButtonUp from "./components/ButtonUp";
+import { ApiProvider } from "./context/ApiContext";
+import { IdProvider } from "./context/IdContext";
 
 function App() {
   return (
-    <div className="App text-center">
-      <h1>Rick and Morty App</h1>
-      <CharactersList />
-    </div>
+    <>
+      <IdProvider>
+        <ApiProvider>
+          <Header />
+          <CharactersList />
+          <ButtonUp />
+        </ApiProvider>
+      </IdProvider>
+    </>
   );
 }
 
