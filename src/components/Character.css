@@ -1,0 +1,34 @@
+
+.project-card {
+    height: 245px;
+    width: 163px;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 5px 5px 10px rgb(0 0 0 / 10%);
+  }
+  
+  .project-pic {
+    width: 100%;
+    height: 110px;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .project-card-body h3, p{
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .project-card-text{
+    margin: 0.2rem;
+  }
+
+  @media screen and (max-width: 375px) {
+    .project-pic {
+      max-width: 100%;
+      height: 161px;
+      border-radius: 10px 10px 0 0;
+    }
+  }
+    
+  
+  
