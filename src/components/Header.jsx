@@ -19,6 +19,16 @@ const Header = () => {
     <div className="header-container">
       <h1 className="header-title">Rick and Morty App</h1>
       <div className="header-body">
+        {loading ? (
+          <div className="loading">Loading...</div>
+        ) : (
+          <div className="episode-title">
+            <h2>Episode {id}</h2>
+            <h3>{data.name}</h3>
+          </div>
+        )}
+      </div>
+      <div className="episode-nav">
         {id === 1 ? (
           <button
             className="button"
@@ -37,15 +47,6 @@ const Header = () => {
             &#8249; Previous
           </button>
         )}
-        {loading ? (
-          ""
-        ) : (
-          <div className="episode-title">
-            <h2>Episode {id}</h2>
-            <h3>{data.name}</h3>
-          </div>
-        )}
-
         <button className="button" type="button" onClick={handledNextEpisode}>
           Next &#8250;
         </button>

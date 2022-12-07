@@ -8,7 +8,7 @@ const CharactersList = () => {
   return (
     <>
       {loading ? (
-        "Loading..."
+        ""
       ) : (
         <>
           <h2 className="character-title">Personajes</h2>
