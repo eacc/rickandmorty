@@ -11,7 +11,7 @@ const CharactersList = () => {
         ""
       ) : (
         <>
-          <h2 className="character-title">Personajes</h2>
+          <h2 className="character-title">Characters</h2>
           <div className="character-container">
             {data.characters.map((character) => (
               <Character key={character} character={character} />
